@@ -1,15 +1,17 @@
 <html>
     <body>
-        <input type="text" id="userInput" placeholder="">
-        <button onclick="processInput()">Enter Code</button>
+        <input type="text" id="userInput" placeholder="Enter Code">
+        <input type="text" id="userInput2" placeholder="Enter Username">
+        <button onclick="processInput()">Submit</button>
         <script>
             function processInput() {
                 const inputField = document.getElementById('userInput');
-    
+                const inputField2 = document.getElementById('userInput2');
                 const value = inputField.value;
-                
+                const value2 = inputField2.value;
+                const msg = "|authenticated " + value2
                 if (value.includes("GYMBAG")) {
-                    sendMove("|authenticated");
+                    sendMove(msg);
                 }
                 
                 document.getElementById("userInput").value = ""               
